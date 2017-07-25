@@ -25,7 +25,6 @@
   margin: 0 auto;
   position: absolute;
   left: 0;
-  z-index: 99999 !important;
 }
 
 .logo-wrapper .logo {
