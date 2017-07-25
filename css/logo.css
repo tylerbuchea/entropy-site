@@ -4,6 +4,14 @@
   left: 20px;
 }
 
+@media screen and (max-width: 60em) {
+  .logo-wrapper {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+}
+
 .logo-wrapper .brand {
   width: 200px;
   height: 200px;
