@@ -62,14 +62,21 @@ a:focus {
 	font-size: 2rem;
 	color: #fff;
 	z-index: 3;
+	opacity: 0;
+}
+
+.modal.active .modal-exit-button {
+	opacity: 1;
+	transition: opacity 0.5s ease-in-out;
+  transition-delay: 0.5s;
 }
 
 .modal .modal-content {
-	background: #fff;
 	min-height: 100%;
 }
 
 .modal .modal-content .modal-banner {
+	background: transparent;
 	width: 100%;
 	height: 400px;
 	background: transparent;
@@ -87,6 +94,7 @@ a:focus {
 }
 
 .modal .modal-content .modal-article {
+	background: #fff;
 	padding: 20px 20px;
 }
 
@@ -120,7 +128,14 @@ a:focus {
 	color: #fff;
 	font-size: 2vw;
 	text-align: center;
+	white-space: pre-wrap;
 	width: 100%;
+}
+
+@media screen and (max-width: 60em) {
+	.grid__link {
+		font-size: 14px;
+	}
 }
 
 .grid--current {
@@ -288,6 +303,7 @@ a:focus {
 		left: auto !important;
 		padding: 0 2em;
 		grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 		grid-auto-rows: auto !important;
 		grid-auto-columns: auto !important;
 		grid-gap: 1vw;
@@ -295,7 +311,7 @@ a:focus {
 	}
 
 	.grid__item {
-		min-height: 50px;
+		min-height: 100px;
 		grid-area: auto !important;
 	}
 
