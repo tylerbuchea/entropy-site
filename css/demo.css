@@ -50,34 +50,50 @@ a:focus {
 	background: #fff;
 }
 
-.modal .modal-exit {
+.modal.active {
+	display: block;
+	animation: fadein 1s;
+}
+
+.modal .modal-exit-button {
 	position: absolute;
 	cursor: pointer;
 	top: 10px;
 	right: 10px;
 	font-size: 2rem;
 	color: #fff;
-	z-index: 1;
+	z-index: 3;
 }
 
-.modal .modal-banner {
+.modal .modal-content {
+
+}
+
+.modal .modal-content .modal-banner {
 	width: 100%;
 	height: 200px;
-	background: #333;
+	background: transparent;
 	position: relative;
 }
 
-.modal .modal-banner .banner-title {
+.modal .modal-content .modal-banner .banner-title {
 	color: #fff;
 	font-size: 2rem;
 	text-transform: uppercase;
 	position: absolute;
 	bottom: 20px;
 	left: 20px;
+	z-index: 3;
 }
 
-.modal .modal-content {
+.modal .modal-content .modal-article {
 	padding: 20px 20px;
+}
+
+.modal .modal-content .modal-article img {
+	width: 400px;
+	height: 200px;
+	background-color: #ddd;
 }
 
 /* Grid */
@@ -102,7 +118,7 @@ a:focus {
 
 .grid__link {
 	color: #fff;
-	font-size: 200%;
+	font-size: 2vw;
 	text-align: center;
 	width: 100%;
 }
@@ -113,18 +129,20 @@ a:focus {
 }
 
 .grid__item {
-	position: relative;
+	cursor: pointer;
 	padding: 1em;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	background-size: cover;
-	transition: all 0.2s ease-in-out;
-	transition: all 1s ease-in-out;
+	transition: all 0.5s ease-in-out;
+
+	position: relative;
+	top: 0px;
+	left: 0px
 }
 
 .grid__item.active {
-	width: 100%;
-	height: 100%;
+	z-index: 2;
 }
 
 .grid__item--name,
