@@ -30,7 +30,7 @@ function expand(item) {
     item.style.left = -left + 'px';
     item.style.top = -top + 'px';
     item.style.width = innerWidth + 'px';
-    item.style.height = '200px';
+    item.style.height = '400px';
   }, 0)
 }
 

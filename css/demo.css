@@ -41,18 +41,17 @@ a:focus {
 }
 
 .modal {
-	display: none;
+	background: transparent;
 	position: absolute;
-	top: 0;
+	top: 100vh;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: #fff;
+	transition: top 0.5s ease-in-out;
 }
 
 .modal.active {
-	display: block;
-	animation: fadein 1s;
+	top: 0;
 }
 
 .modal .modal-exit-button {
@@ -66,12 +65,13 @@ a:focus {
 }
 
 .modal .modal-content {
-
+	background: #fff;
+	min-height: 100%;
 }
 
 .modal .modal-content .modal-banner {
 	width: 100%;
-	height: 200px;
+	height: 400px;
 	background: transparent;
 	position: relative;
 }
