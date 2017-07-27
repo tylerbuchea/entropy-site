@@ -1,3 +1,4 @@
+const documentBody = document.body;
 const items = document.querySelectorAll('.grid__item');
 const modal = document.querySelector('.modal');
 const modalContent = document.querySelector('.modal-content');
@@ -27,6 +28,7 @@ function expand(item) {
   item.style.height = clientHeight + 'px';
 
   setTimeout(() => {
+    documentBody.className = 'modal-open';
     item.style.left = -left + 'px';
     item.style.top = -top + 'px';
     item.style.width = innerWidth + 'px';
@@ -42,6 +44,7 @@ function reset() {
   itemRef.style.width = clientWidth + 'px';
   itemRef.style.height = clientHeight + 'px';
   modal.className = 'modal';
+  documentBody.className = '';
   setTimeout(() => {
     itemRef.className = itemRef.className.replace(' active', '');
     itemRef.style.width = 'auto';

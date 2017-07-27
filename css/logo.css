@@ -19,6 +19,13 @@
   margin: 0 auto;
 }
 
+.logo-wrapper .logo-subtext {
+  color: #39c283;
+  position: relative;
+  top: -30px;
+  text-align: center;
+}
+
 .logo-wrapper .brand:before {
   background-size: 100% 100%;
   content: "ENTROPY";

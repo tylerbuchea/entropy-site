@@ -27,6 +27,10 @@ body {
 	background: var(--body-bg);
 }
 
+body.modal-open {
+	overflow: hidden;
+}
+
 a {
 	text-decoration: none;
 	color: #ef3b3b;
@@ -42,12 +46,13 @@ a:focus {
 
 .modal {
 	background: transparent;
-	position: absolute;
+	position: fixed;
 	top: 100vh;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	transition: top 0.5s ease-in-out;
+	overflow-y: auto;
 }
 
 .modal.active {
@@ -91,6 +96,11 @@ a:focus {
 	bottom: 20px;
 	left: 20px;
 	z-index: 3;
+	left: 20px;
+}
+
+.modal.active .modal-content .modal-banner .banner-title {
+	left: 20px;
 }
 
 .modal .modal-content .modal-article {
