@@ -11,6 +11,17 @@ var itemRef = {};
 items.forEach(item => item.addEventListener('click', () => expand(item)));
 modalExitButton.addEventListener('click', reset);
 
+modal.onscroll = function(ev) {
+  const activeGrideItem = document.querySelector('.grid__item.active');
+  const newPosition = (parseInt(activeGrideItem.style.top.replace('px', '')) - modal.scrollTop) + 'px';
+  console.log(modal.scrollTop);
+  console.log(activeGrideItem.style.top);
+  console.log(newPosition);
+  // activeGrideItem.style.top = newPosition;
+  if (modal.scrollTop < 400) {
+  }
+};
+
 function expand(item) {
   if (item.className.search('active') > 0) return;
   modalContent.innerHTML = articles.one;
@@ -28,7 +39,7 @@ function expand(item) {
   item.style.height = clientHeight + 'px';
 
   setTimeout(() => {
-    documentBody.className = 'modal-open';
+    documentBody.className = 'container modal-open';
     item.style.left = -left + 'px';
     item.style.top = -top + 'px';
     item.style.width = innerWidth + 'px';
@@ -44,10 +55,34 @@ function reset() {
   itemRef.style.width = clientWidth + 'px';
   itemRef.style.height = clientHeight + 'px';
   modal.className = 'modal';
-  documentBody.className = '';
+  documentBody.className = 'container';
   setTimeout(() => {
     itemRef.className = itemRef.className.replace(' active', '');
     itemRef.style.width = 'auto';
     itemRef.style.height = 'auto';
   }, 500);
 }
+
+(function() {
+  const throttle = function(type, name, obj) {
+    obj = obj || window;
+    let running = false;
+    const func = function() {
+      if (running) { return; }
+      running = true;
+       requestAnimationFrame(function() {
+        obj.dispatchEvent(new CustomEvent(name));
+        running = false;
+      });
+    };
+    obj.addEventListener(type, func);
+  };
+  throttle('resize', 'optimizedResize');
+})();
+
+window.addEventListener('optimizedResize', function() {
+  console.log('resize');
+  const activeGrideItem = document.querySelector('.grid__item.active');
+  if (activeGrideItem) {
+  }
+});
