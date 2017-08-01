@@ -24,7 +24,7 @@ modal.onscroll = function(ev) {
 
 function expand(item) {
   if (item.className.search('active') > 0) return;
-  modalContent.innerHTML = articles.one;
+  modalContent.innerHTML = articles[item.getAttribute('data-article')];
   modal.className = 'modal active';
   item.className += ' active';
 
