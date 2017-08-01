@@ -1,5 +1,5 @@
 const documentBody = document.body;
-const items = document.querySelectorAll('.grid__item');
+const items = document.querySelectorAll('.grid-item');
 const modal = document.querySelector('.modal');
 const modalContent = document.querySelector('.modal-content');
 const modalExitButton = document.querySelector('.modal-exit-button');
@@ -12,7 +12,7 @@ items.forEach(item => item.addEventListener('click', () => expand(item)));
 modalExitButton.addEventListener('click', reset);
 
 modal.onscroll = function(ev) {
-  const activeGrideItem = document.querySelector('.grid__item.active');
+  const activeGrideItem = document.querySelector('.grid-item.active');
   const newPosition = (parseInt(activeGrideItem.style.top.replace('px', '')) - modal.scrollTop) + 'px';
   console.log(modal.scrollTop);
   console.log(activeGrideItem.style.top);
@@ -82,7 +82,7 @@ function reset() {
 
 window.addEventListener('optimizedResize', function() {
   console.log('resize');
-  const activeGrideItem = document.querySelector('.grid__item.active');
+  const activeGrideItem = document.querySelector('.grid-item.active');
   if (activeGrideItem) {
   }
 });
