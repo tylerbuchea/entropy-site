@@ -1,0 +1,45 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+body {
+	/* Grid gap */
+	--gap: 10px;
+	/* Color scheme */
+	--body-text: #333;
+	--body-bg: #ccd8e4;
+	--link-text: #ef3b3b;
+	--link-text-hover: #333;
+	--grid-name-text: #ef3b3b;
+	--grid-title-text: #ef3b3b;
+	--grid-nav-text: #fff;
+	--grid-nav-bg: #442ef4;
+	--grid-nav-text-hover: #fff;
+	--grid-nav-bg-hover: #1f1f1f;
+	--grid-text: #333;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+	min-height: 600px;
+	color: #333;
+	color: var(--body-text);
+	background: #ccd8e4;
+	background: var(--body-bg);
+}
+
+body.modal-open {
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: #ef3b3b;
+	color: var(--link-text);
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	color: #333;
+	color: var(--link-text-hover);
+}
