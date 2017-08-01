@@ -5,4 +5,4 @@
 - Add dark opaque gradient to top and bottom of header images so text and "x" are visible
 - Add SVG "x" to replace modal close
 - Scoll to top of modal on active
-- Add fancy/bouncy scroll to modal and page
+- ~~Add momentum scrolling~~
