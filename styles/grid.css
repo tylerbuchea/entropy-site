@@ -158,30 +158,29 @@
 	animation: animateIn 0.8s cubic-bezier(0.7,0,0.3,1) forwards;
 }
 
-.grid .grid-item:first-child {
-	grid-area: 12 / 1 / 24 / 5;
-	background-image: url(../img/7.jpg);
-}
-.grid .grid-item:nth-child(2) {
-	grid-area: 14 / 5 / 28 / 10;
-	background-image: url(../img/11.jpg);
-}
-.grid .grid-item:nth-child(3) {
-	grid-area: 1 / 10 / 26 / 15;
-	background-image: url(../img/15.jpg);
-}
-.grid .grid-item:nth-child(4) {
-	grid-area: 11 / 15 / 29 / 24;
-	background-image: url(../grid/drone0.png);
-}
-.grid .grid-item:nth-child(5) {
-	grid-area: 1 / 15 / 11 / 27;
-	background-image: url(../grid/viz1.png);
-}
-.grid .grid-item:nth-child(6) {
-	grid-area: 11 / 24 / 20	/ 30;
-	background-image: url(../img/6.jpg);
-}
+.grid .grid-item:first-child { grid-area: 12 / 1 / 24 / 5; }
+/*.grid .grid-item.grid-item-full-preview:first-child { background-image: url(../img/7.jpg); }*/
+.grid .grid-item.grid-item-full-img:first-child { background-image: url(../img/7.jpg); }
+
+.grid .grid-item:nth-child(2) { grid-area: 14 / 5 / 28 / 10; }
+/*.grid .grid-item.grid-item-full-preview:nth-child(2) { background-image: url(../img/11.jpg); }*/
+.grid .grid-item.grid-item-full-img:nth-child(2) { background-image: url(../img/11.jpg); }
+
+.grid .grid-item:nth-child(3) { grid-area: 1 / 10 / 26 / 15; }
+/*.grid .grid-item.grid-item-full-preview:nth-child(3) { background-image: url(../img/15.jpg); }*/
+.grid .grid-item.grid-item-full-img:nth-child(3) { background-image: url(../img/15.jpg); }
+
+.grid .grid-item:nth-child(4) { grid-area: 11 / 15 / 29 / 24; }
+/*.grid .grid-item.grid-item-full-preview:nth-child(4) { background-image: url(../grid/drone0.png); }*/
+.grid .grid-item.grid-item-full-img:nth-child(4) { background-image: url(../grid/drone0.png); }
+
+.grid .grid-item:nth-child(5) { grid-area: 1 / 15 / 11 / 27; }
+/*.grid .grid-item.grid-item-full-preview:nth-child(5) { background-image: url(../grid/viz1.png); }*/
+.grid .grid-item.grid-item-full-img:nth-child(5) { background-image: url(../grid/viz1.png); }
+
+.grid .grid-item:nth-child(6) { grid-area: 11 / 24 / 20	/ 30; }
+/*.grid .grid-item.grid-item-full-preview:nth-child(6) { background-image: url(../img/6.jpg); }*/
+.grid .grid-item.grid-item-full-img:nth-child(6) { background-image: url(../img/6.jpg); }
 
 .grid .grid-item--name {
 	grid-area: 16 / 9 / 30 / 16;

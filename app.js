@@ -18,27 +18,24 @@ window.onload = () => {
   blurUp(initialState);
 };
 
-const loadImage = (src, callback) => {
-  if (src) {
-    let image = new Image();
-    image.onload = () => callback ? callback.call(this) : null;
+const loadImage = (src) =>
+  new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => resolve(src);
+    image.onerror = err => reject(err);
     image.src = src;
-  }
-};
+  });
 
 const blurUp = state => {
   state.gridItems.forEach((item, index) => {
-    loadImage(item.fullImage, () => sup(index, state));
+    loadImage(item.fullImage)
+      .then(() => {
+        const nextGridItems = prevState.gridItems.slice();
+        nextGridItems[index] = { ...nextGridItems[index], isFullImageLoaded: true };
+        setState({ gridItems: nextGridItems });
+      });
   });
 };
-
-const sup = (index, state) => {
-  console.log('hi')
-  const nextGridItems = state.gridItems.slice();
-  nextGridItems[index] = { ...nextGridItems[index], isFullImageLoaded: true };
-  console.log(nextGridItems)
-  setState({ gridItems: nextGridItems });
-}
 
 const setState = state => {
   const nextState = { ...prevState, ...state }
@@ -90,7 +87,12 @@ const renderApp = state => {
     </div>
 
     <div class="modal">
-      <div class="modal-exit-button">X</div>
+      <div class="modal-exit-button">
+        <svg viewPort="0 0 0 0" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <line x1="1" y1="30" x2="30" y2="1" stroke="white" stroke-width="2" />
+          <line x1="1" y1="1" x2="30" y2="30" stroke="white" stroke-width="2" />
+        </svg>
+      </div>
       <div class="modal-content"></div>
     </div>`
   );
@@ -108,6 +110,7 @@ function modalOpen(item) {
 
   modalContent.innerHTML = articles[item.getAttribute('data-article')];
   modal.className = 'modal active';
+  modal.scrollTop = 0;
   item.className += ' active';
   itemInitialDimensions = { clientHeight, clientWidth };
   itemRef = item;
