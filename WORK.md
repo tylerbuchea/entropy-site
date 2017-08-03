@@ -1,5 +1,6 @@
 # Work to be done
 
+- Play with different color schems (blues, purples, etc) ?
 - Add Medium style image "blur up" on load
 - Add revert to toolbar when modal is scrolled past header
 - Explore alternate curves for animations (bazier, etc, etc)

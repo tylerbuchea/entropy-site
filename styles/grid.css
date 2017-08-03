@@ -153,7 +153,6 @@
 	animation: animateOut 0.8s cubic-bezier(0.7,0,0.3,1) forwards;
 }
 
-
 .grid-item--animateIn {
 	animation: animateIn 0.8s cubic-bezier(0.7,0,0.3,1) forwards;
 }
