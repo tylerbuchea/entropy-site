@@ -131,6 +131,8 @@ function modalClose() {
   const modalContent = document.querySelector('.modal-content');
   const modalBanner = document.querySelector('.modal-banner');
   const { clientHeight, clientWidth } = itemInitialDimensions;
+  const iframe = document.querySelector('iframe');
+  iframe.src = '';
 
   itemRef.style.left = '0px';
   itemRef.style.top = '0px';
