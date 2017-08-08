@@ -175,11 +175,11 @@
 
 .grid .grid-item:nth-child(5) { grid-area: 1 / 15 / 11 / 27; }
 /*.grid .grid-item.grid-item-full-preview:nth-child(5) { background-image: url(../grid/viz1.png); }*/
-.grid .grid-item.grid-item-full-img:nth-child(5) { background-image: url(../grid/viz1.png); }
+.grid .grid-item.grid-item-full-img:nth-child(5) { background-image: url(../grid/starmaster0.png); }
 
 .grid .grid-item:nth-child(6) { grid-area: 11 / 24 / 20	/ 30; }
 /*.grid .grid-item.grid-item-full-preview:nth-child(6) { background-image: url(../img/6.jpg); }*/
-.grid .grid-item.grid-item-full-img:nth-child(6) { background-image: url(../img/6.jpg); }
+.grid .grid-item.grid-item-full-img:nth-child(6) { background-image: url(../grid/viz1.png); }
 
 .grid .grid-item--name {
 	grid-area: 16 / 9 / 30 / 16;

@@ -1,0 +1,14 @@
+:root {
+	--gap: 10px;
+	--body-text: #333;
+	--body-bg: #ccd8e4;
+	--link-text: #ef3b3b;
+	--link-text-hover: #333;
+	--grid-name-text: #ef3b3b;
+	--grid-title-text: #ef3b3b;
+	--grid-nav-text: #fff;
+	--grid-nav-bg: #442ef4;
+	--grid-nav-text-hover: #fff;
+	--grid-nav-bg-hover: #1f1f1f;
+	--grid-text: #333;
+}

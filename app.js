@@ -18,7 +18,7 @@ window.onload = () => {
   blurUp(initialState);
 };
 
-const loadImage = (src) =>
+const loadImage = src =>
   new Promise((resolve, reject) => {
     const image = new Image();
     image.onload = () => resolve(src);
@@ -81,7 +81,7 @@ const renderApp = state => {
         OUR <br/>WORK
       </h2>
       <h3 data-article="one" class="grid-item grid-item--animateIn grid-item--title">
-        BUCHEA
+        STAR MASTER
       </h3>
 
     </div>
