@@ -1,0 +1,29 @@
+{
+  "name": "entropy-site",
+  "version": "1.0.0",
+  "description": "**2017**",
+  "main": "app.js",
+  "scripts": {
+    "clean": "rimraf build && mkdir build",
+    "dev": "npm run clean && babel ./src --watch --out-file ./build/index.js",
+    "build": "npm run clean && babel ./src --out-file ./build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tylerbuchea/entropy-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tylerbuchea/entropy-site/issues"
+  },
+  "homepage": "https://github.com/tylerbuchea/entropy-site#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "rimraf": "^2.6.1"
+  }
+}
