@@ -12,7 +12,6 @@ npm install
 
 ```bash
 npm run dev
-server 5000
 ```
 
 ## Test
