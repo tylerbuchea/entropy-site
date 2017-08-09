@@ -46,8 +46,9 @@ const blurUp = state => {
       .map((item, index) => loadImage(item.fullImage))
   ])
   .then(() => {
-    const gridItems = state.gridItems.map(({ fullImage }) => ({ fullImage, isFullImageLoaded: true }));
-    setState({ gridItems });
+    // const gridItems = state.gridItems.map(({ fullImage }) => ({ fullImage, isFullImageLoaded: true }));
+    // setState({ gridItems });
+    [].slice.call(document.querySelectorAll('.grid-item-img')).forEach(item => item.className += ' grid-item-full-img');
   });
 };
 
