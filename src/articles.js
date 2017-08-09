@@ -55,3 +55,5 @@ const articles = {
     </div>
   `,
 };
+
+export default articles;

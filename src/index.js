@@ -1,3 +1,21 @@
+// import './styles/index.css';
+import './styles/theme-green.css';
+import './styles/normalize.css';
+import './styles/global.css';
+import './styles/animations.css';
+import './styles/logo.css';
+import './styles/modal.css';
+import './styles/grid.css';
+
+import './img/7.jpg';
+import './img/11.jpg';
+import './img/15.jpg';
+import './img/drone0.png';
+import './img/viz1.png';
+import './img/6.jpg';
+
+import articles from './articles';
+
 const app = document.getElementById('app');
 let itemInitialDimensions = {};
 let itemRef = {};
@@ -7,15 +25,10 @@ const initialState = {
     { fullImage: 'img/7.jpg', isFullImageLoaded: false },
     { fullImage: 'img/11.jpg', isFullImageLoaded: false },
     { fullImage: 'img/15.jpg', isFullImageLoaded: false },
-    { fullImage: 'grid/drone0.png', isFullImageLoaded: false },
-    { fullImage: 'grid/viz1.png', isFullImageLoaded: false },
+    { fullImage: 'img/drone0.png', isFullImageLoaded: false },
+    { fullImage: 'img/viz1.png', isFullImageLoaded: false },
     { fullImage: 'img/6.jpg', isFullImageLoaded: false },
   ],
-};
-
-window.onload = () => {
-  setState(initialState);
-  blurUp(initialState);
 };
 
 const loadImage = src =>
@@ -27,13 +40,14 @@ const loadImage = src =>
   });
 
 const blurUp = state => {
-  state.gridItems.forEach((item, index) => {
-    loadImage(item.fullImage)
-      .then(() => {
-        const nextGridItems = prevState.gridItems.slice();
-        nextGridItems[index] = { ...nextGridItems[index], isFullImageLoaded: true };
-        setState({ gridItems: nextGridItems });
-      });
+  Promise.all([
+    ...state
+      .gridItems
+      .map((item, index) => loadImage(item.fullImage))
+  ])
+  .then(() => {
+    const gridItems = state.gridItems.map(({ fullImage }) => ({ fullImage, isFullImageLoaded: true }));
+    setState({ gridItems });
   });
 };
 
@@ -146,3 +160,6 @@ function modalClose() {
     itemRef.style.height = 'auto';
   }, 500);
 }
+
+setState(initialState);
+blurUp(initialState);
