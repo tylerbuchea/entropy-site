@@ -5,25 +5,26 @@
 ## Setup
 
 ```bash
-
+npm install
 ```
 
 ## Develop
 
 ```bash
+npm run dev
 server 5000
 ```
 
 ## Test
 
 ```bash
-
+# No tests yet
 ```
 
 ## Deploy
 
 ```bash
-
+./ship
 ```
 
 ## Resources
