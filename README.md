@@ -11,8 +11,7 @@ npm install
 ## Develop
 
 ```bash
-npm run dev
-server 5000
+npm start
 ```
 
 ## Test
