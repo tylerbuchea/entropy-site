@@ -120,7 +120,7 @@ const renderApp = state => {
         OUR <br/>WORK
       </h2>
       <h3 data-article="one" class="grid-item grid-item--animateIn grid-item--title">
-        STAR MASTER
+        BUCHEA
       </h3>
 
     </div>
