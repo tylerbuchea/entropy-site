@@ -22,12 +22,24 @@ let itemRef = {};
 let prevState = {};
 const initialState = {
   gridItems: [
-    { fullImage: 'img/7.jpg', isFullImageLoaded: false },
-    { fullImage: 'img/11.jpg', isFullImageLoaded: false },
-    { fullImage: 'img/15.jpg', isFullImageLoaded: false },
-    { fullImage: 'img/drone0.png', isFullImageLoaded: false },
-    { fullImage: 'img/viz1.png', isFullImageLoaded: false },
-    { fullImage: 'img/6.jpg', isFullImageLoaded: false },
+    { fullImage: 'img/7.jpg', isFullImageLoaded: false, modalTemplate: 'one' },
+    { fullImage: 'img/11.jpg', isFullImageLoaded: false, modalTemplate: 'one' },
+    { fullImage: 'img/15.jpg', isFullImageLoaded: false, modalTemplate: 'one' },
+    {
+      fullImage: 'img/drone0.png',
+      isFullImageLoaded: false,
+      modalTemplate: 'one',
+    },
+    {
+      fullImage: 'img/viz1.png',
+      isFullImageLoaded: false,
+      modalTemplate: 'three',
+    },
+    {
+      fullImage: 'img/6.jpg',
+      isFullImageLoaded: false,
+      modalTemplate: 'two',
+    },
   ],
 };
 
@@ -41,23 +53,22 @@ const loadImage = src =>
 
 const blurUp = state => {
   Promise.all([
-    ...state
-      .gridItems
-      .map((item, index) => loadImage(item.fullImage))
-  ])
-  .then(() => {
+    ...state.gridItems.map((item, index) => loadImage(item.fullImage)),
+  ]).then(() => {
     // const gridItems = state.gridItems.map(({ fullImage }) => ({ fullImage, isFullImageLoaded: true }));
     // setState({ gridItems });
-    [].slice.call(document.querySelectorAll('.grid-item-img')).forEach(item => item.className += ' grid-item-full-img');
+    [].slice
+      .call(document.querySelectorAll('.grid-item-img'))
+      .forEach(item => (item.className += ' grid-item-full-img'));
   });
 };
 
 const setState = state => {
-  const nextState = { ...prevState, ...state }
+  const nextState = { ...prevState, ...state };
   const markup = renderApp(nextState);
   app.innerHTML = markup;
   assignEvents();
-  return prevState = nextState;
+  return (prevState = nextState);
 };
 
 const assignEvents = () => {
@@ -68,7 +79,10 @@ const assignEvents = () => {
   modalExitButton.addEventListener('click', modalClose);
   modal.onscroll = function(ev) {
     const activeGrideItem = document.querySelector('.grid-item.active');
-    const newPosition = (parseInt(activeGrideItem.style.top.replace('px', '')) - modal.scrollTop) + 'px';
+    const newPosition =
+      parseInt(activeGrideItem.style.top.replace('px', '')) -
+      modal.scrollTop +
+      'px';
     // console.log(modal.scrollTop);
     // console.log(activeGrideItem.style.top);
     // console.log(newPosition);
@@ -79,17 +93,21 @@ const assignEvents = () => {
 };
 
 const renderApp = state => {
-  return (
-    `<div class="grid">
+  return `<div class="grid">
 
-      ${state.gridItems.map((item, index) =>
-        `<div data-article="one" class="grid-item grid-item-img ${item.isFullImageLoaded ? 'grid-item-full-img' : 'grid-item-preview-img'} grid-item--animateIn"></div>`
-      ).join('\n')}
+      ${state.gridItems
+        .map(
+          (item, index) =>
+            `<div data-article="${item.modalTemplate}" class="grid-item grid-item-img ${item.isFullImageLoaded
+              ? 'grid-item-full-img'
+              : 'grid-item-preview-img'} grid-item--animateIn"></div>`
+        )
+        .join('\n')}
 
-      <div data-article="one" class="grid-item grid-item--animateIn grid-item--nav grid-item--nav-prev">
+      <div data-article="contact" class="grid-item grid-item--animateIn grid-item--nav grid-item--nav-prev">
         <div class="grid__link">CONTACT</div>
       </div>
-      <div data-article="one" class="grid-item grid-item--animateIn grid-item--nav grid-item--nav-next">
+      <div data-link="http://138.68.231.138" class="grid-item grid-item--animateIn grid-item--nav grid-item--nav-next">
         <div class="grid__link">ARTICLES</div>
       </div>
       <h2 data-article="one" class="grid-item grid-item--animateIn grid-item--name">
@@ -109,9 +127,8 @@ const renderApp = state => {
         </svg>
       </div>
       <div class="modal-content"></div>
-    </div>`
-  );
-}
+    </div>`;
+};
 
 function modalOpen(item) {
   if (item.className.search('active') > 0) return;
@@ -122,8 +139,11 @@ function modalOpen(item) {
   const { innerHeight, innerWidth } = window;
   const { clientHeight, clientWidth } = item;
   const { top, left } = item.getBoundingClientRect();
+  const dataLink = item.getAttribute('data-link');
+  const dataArticle = item.getAttribute('data-article');
 
-  modalContent.innerHTML = articles[item.getAttribute('data-article')];
+  if (dataLink) return window.open(dataLink);
+  modalContent.innerHTML = articles[dataArticle];
   modal.className = 'modal active';
   modal.scrollTop = 0;
   item.className += ' active';
@@ -137,7 +157,7 @@ function modalOpen(item) {
     item.style.top = -top + 'px';
     item.style.width = innerWidth + 'px';
     item.style.height = '400px';
-  }, 0)
+  }, 0);
 }
 
 function modalClose() {
@@ -162,16 +182,16 @@ function modalClose() {
   }, 500);
 }
 
-(function () {
-  var throttle = function (type, name, obj) {
+(function() {
+  var throttle = function(type, name, obj) {
     obj = obj || window;
     var running = false;
-    var func = function () {
+    var func = function() {
       if (running) {
         return;
       }
       running = true;
-      requestAnimationFrame(function () {
+      requestAnimationFrame(function() {
         obj.dispatchEvent(new CustomEvent(name));
         running = false;
       });
