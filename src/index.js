@@ -11,6 +11,7 @@ import './img/drone0.png';
 import './img/viz1.png';
 import './img/6.jpg';
 import './img/crew.gif';
+import './img/starmaster0.png';
 
 import articles from './articles';
 
