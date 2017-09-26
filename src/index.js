@@ -13,6 +13,7 @@ import './img/15.jpg';
 import './img/drone0.png';
 import './img/viz1.png';
 import './img/6.jpg';
+import './img/crew.gif';
 
 import articles from './articles';
 
