@@ -7,9 +7,6 @@ import './styles/logo.css';
 import './styles/modal.css';
 import './styles/grid.css';
 
-import './img/7.jpg';
-import './img/11.jpg';
-import './img/15.jpg';
 import './img/drone0.png';
 import './img/viz1.png';
 import './img/6.jpg';
@@ -23,9 +20,17 @@ let itemRef = {};
 let prevState = {};
 const initialState = {
   gridItems: [
-    { fullImage: 'img/7.jpg', isFullImageLoaded: false, modalTemplate: 'one' },
-    { fullImage: 'img/11.jpg', isFullImageLoaded: false, modalTemplate: 'one' },
-    { fullImage: 'img/15.jpg', isFullImageLoaded: false, modalTemplate: 'one' },
+    { fullImage: 'img/6.jpg', isFullImageLoaded: false, modalTemplate: 'two' },
+    {
+      fullImage: 'img/viz1.png',
+      isFullImageLoaded: false,
+      modalTemplate: 'three',
+    },
+    {
+      fullImage: 'img/drone0.png',
+      isFullImageLoaded: false,
+      modalTemplate: 'one',
+    },
     {
       fullImage: 'img/drone0.png',
       isFullImageLoaded: false,
