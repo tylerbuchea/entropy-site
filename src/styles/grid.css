@@ -207,7 +207,7 @@
 }
 /*.grid .grid-item.grid-item-full-preview:nth-child(2) { background-image: url(../img/11.jpg); }*/
 .grid .grid-item.grid-item-full-img:nth-child(2) {
-  background-image: url(../img/starmaster0.png);
+  background-image: url(../img/starmaster1.png);
 }
 
 .grid .grid-item:nth-child(3) {
@@ -223,7 +223,7 @@
 }
 /*.grid .grid-item.grid-item-full-preview:nth-child(4) { background-image: url(../img/drone0.png); }*/
 .grid .grid-item.grid-item-full-img:nth-child(4) {
-  background-image: url(../img/drone0.png);
+  background-image: url(../img/drone1.png);
 }
 
 .grid .grid-item:nth-child(5) {
@@ -239,7 +239,7 @@
 }
 /*.grid .grid-item.grid-item-full-preview:nth-child(6) { background-image: url(../img/6.jpg); }*/
 .grid .grid-item.grid-item-full-img:nth-child(6) {
-  background-image: url(../img/viz1.png);
+  background-image: url(../img/viz5.png);
 }
 
 .grid .grid-item--name {

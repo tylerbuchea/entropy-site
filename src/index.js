@@ -7,11 +7,13 @@ import './styles/logo.css';
 import './styles/modal.css';
 import './styles/grid.css';
 
-import './img/drone0.png';
-import './img/viz1.png';
-import './img/6.jpg';
-import './img/crew.gif';
 import './img/starmaster0.png';
+import './img/starmaster1.png';
+import './img/drone0.png';
+import './img/drone1.png';
+import './img/viz1.png';
+import './img/viz5.png';
+import './img/crew.gif';
 
 import articles from './articles';
 
@@ -21,14 +23,18 @@ let itemRef = {};
 let prevState = {};
 const initialState = {
   gridItems: [
-    { fullImage: 'img/6.jpg', isFullImageLoaded: false, modalTemplate: 'two' },
+    {
+      fullImage: 'img/starmaster1.png',
+      isFullImageLoaded: false,
+      modalTemplate: 'two',
+    },
     {
       fullImage: 'img/viz1.png',
       isFullImageLoaded: false,
       modalTemplate: 'three',
     },
     {
-      fullImage: 'img/drone0.png',
+      fullImage: 'img/drone1.png',
       isFullImageLoaded: false,
       modalTemplate: 'one',
     },
@@ -38,12 +44,12 @@ const initialState = {
       modalTemplate: 'one',
     },
     {
-      fullImage: 'img/viz1.png',
+      fullImage: 'img/viz5.png',
       isFullImageLoaded: false,
       modalTemplate: 'three',
     },
     {
-      fullImage: 'img/6.jpg',
+      fullImage: 'img/starmaster0.png',
       isFullImageLoaded: false,
       modalTemplate: 'two',
     },
