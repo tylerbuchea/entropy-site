@@ -1,4 +1,4 @@
-# Entropy Site
+# Tensor Site
 
 **2017**
 

@@ -28,11 +28,11 @@
 
 .logo-wrapper .brand:before {
   background-size: 100% 100%;
-  content: "ENTROPY";
+  content: 'TENSOR';
   line-height: 205px;
   color: #39c283;
   font-size: 17px;
-  font-family: "HEAVITAS", "Helvetica Rounded", Arial, sans-serif;
+  font-family: 'HEAVITAS', 'Helvetica Rounded', Arial, sans-serif;
   font-weight: bold;
   text-align: center;
   width: 200px;
@@ -65,19 +65,19 @@
 .logo-wrapper .logo svg path:nth-child(1) {
   opacity: 1;
   animation-name: rotate-1;
-  animation-delay: .5s;
+  animation-delay: 0.5s;
 }
 
 .logo-wrapper .logo svg path:nth-child(2) {
-  opacity: .5;
+  opacity: 0.5;
   animation-name: rotate-2;
-  animation-delay: .6s;
+  animation-delay: 0.6s;
 }
 
 .logo-wrapper .logo svg path:nth-child(3) {
-  opacity: .8;
+  opacity: 0.8;
   animation-name: rotate-3;
-  animation-delay: .7s;
+  animation-delay: 0.7s;
 }
 
 @keyframes scale-1 {
@@ -85,7 +85,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(.9);
+    transform: scale(0.9);
   }
   100% {
     transform: scale(1);

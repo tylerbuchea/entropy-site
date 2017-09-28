@@ -22,8 +22,7 @@ let itemInitialDimensions = {};
 let itemRef = {};
 let prevState = {};
 const initialState = {
-  gridItems: [
-    {
+  gridItems: [{
       fullImage: 'img/starmaster1.png',
       isFullImageLoaded: false,
       modalTemplate: 'two',
@@ -77,7 +76,9 @@ const blurUp = state => {
 };
 
 const setState = state => {
-  const nextState = { ...prevState, ...state };
+  const nextState = { ...prevState,
+    ...state
+  };
   const markup = renderApp(nextState);
   app.innerHTML = markup;
   assignEvents();
@@ -90,7 +91,7 @@ const assignEvents = () => {
   const items = document.querySelectorAll('.grid-item');
   items.forEach(item => item.addEventListener('click', () => modalOpen(item)));
   modalExitButton.addEventListener('click', modalClose);
-  modal.onscroll = function(ev) {
+  modal.onscroll = function (ev) {
     const activeGrideItem = document.querySelector('.grid-item.active');
     const newPosition =
       parseInt(activeGrideItem.style.top.replace('px', '')) -
@@ -100,8 +101,7 @@ const assignEvents = () => {
     // console.log(activeGrideItem.style.top);
     // console.log(newPosition);
     // activeGrideItem.style.top = newPosition;
-    if (modal.scrollTop < 400) {
-    }
+    if (modal.scrollTop < 400) {}
   };
 };
 
@@ -127,7 +127,7 @@ const renderApp = state => {
         OUR <br/>WORK
       </h2>
       <h3 data-article="one" class="grid-item grid-item--animateIn grid-item--title">
-        BUCHEA
+        &#x1F984;
       </h3>
 
     </div>
@@ -149,9 +149,18 @@ function modalOpen(item) {
   const modal = document.querySelector('.modal');
   const modalContent = document.querySelector('.modal-content');
   const modalBanner = document.querySelector('.modal-banner');
-  const { innerHeight, innerWidth } = window;
-  const { clientHeight, clientWidth } = item;
-  const { top, left } = item.getBoundingClientRect();
+  const {
+    innerHeight,
+    innerWidth
+  } = window;
+  const {
+    clientHeight,
+    clientWidth
+  } = item;
+  const {
+    top,
+    left
+  } = item.getBoundingClientRect();
   const dataLink = item.getAttribute('data-link');
   const dataArticle = item.getAttribute('data-article');
 
@@ -160,7 +169,10 @@ function modalOpen(item) {
   modal.className = 'modal active';
   modal.scrollTop = 0;
   item.className += ' active';
-  itemInitialDimensions = { clientHeight, clientWidth };
+  itemInitialDimensions = {
+    clientHeight,
+    clientWidth
+  };
   itemRef = item;
   item.style.width = clientWidth + 'px';
   item.style.height = clientHeight + 'px';
@@ -178,7 +190,10 @@ function modalClose() {
   const modal = document.querySelector('.modal');
   const modalContent = document.querySelector('.modal-content');
   const modalBanner = document.querySelector('.modal-banner');
-  const { clientHeight, clientWidth } = itemInitialDimensions;
+  const {
+    clientHeight,
+    clientWidth
+  } = itemInitialDimensions;
   const iframe = document.querySelector('iframe');
   // iframe.src = '';
 
@@ -195,16 +210,16 @@ function modalClose() {
   }, 500);
 }
 
-(function() {
-  var throttle = function(type, name, obj) {
+(function () {
+  var throttle = function (type, name, obj) {
     obj = obj || window;
     var running = false;
-    var func = function() {
+    var func = function () {
       if (running) {
         return;
       }
       running = true;
-      requestAnimationFrame(function() {
+      requestAnimationFrame(function () {
         obj.dispatchEvent(new CustomEvent(name));
         running = false;
       });

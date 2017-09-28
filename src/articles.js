@@ -30,7 +30,7 @@ const articles = {
       <p>
         Working on this project I learned about browser support
         for mobile gaming and realized we were right on the cusp.
-        The very idea for Entropy's specific offering of mobile first
+        The very idea for Tensor's specific offering of mobile first
         web experience was born out of the realizations brought to light
         by this project.
       </p>
@@ -73,7 +73,7 @@ const articles = {
 
     <div class="modal-article">
       <p>
-        This is a proof of concept turned into a fully realized game. Entropy took
+        This is a proof of concept turned into a fully realized game. Tensor took
         everything we learned from passed projects about making mobile games performant, playable,
         and fun on the web and poored that expertise into this game.
       </p>

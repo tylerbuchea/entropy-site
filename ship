@@ -1,2 +1,2 @@
 npm run build
-surge -p ./build -d entropy.surge.sh
+surge -p ./build -d tensor.surge.sh

@@ -1,24 +1,25 @@
 {
-  "name": "entropy-site",
+  "name": "tensor-site",
   "version": "1.0.0",
   "description": "**2017**",
   "main": "app.js",
   "scripts": {
     "clean": "rimraf build && mkdir build",
-    "build": "npm run clean && webpack -p",
+    "copy-cname": "cp src/CNAME build",
+    "build": "npm run clean && webpack -p && npm run copy-cname",
     "start": "npm run build && webpack-dev-server --content-base build/ --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tylerbuchea/entropy-site.git"
+    "url": "git+https://github.com/tylerbuchea/tensor-site.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tylerbuchea/entropy-site/issues"
+    "url": "https://github.com/tylerbuchea/tensor-site/issues"
   },
-  "homepage": "https://github.com/tylerbuchea/entropy-site#readme",
+  "homepage": "https://github.com/tylerbuchea/tensor-site#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
