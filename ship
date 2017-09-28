@@ -8,6 +8,11 @@ if [ "$environment" == "production" ] ; then
     npm run build
     surge -p ./build -d tensor.team
     echo "Production shipped! http://tensor.team"
+elif [ "$environment" == "staging" ] ; then
+    echo "Shipping $environment"
+    npm run build
+    surge -p ./build -d tensor.surge.sh
+    echo "Staging shipped! https://tensor.surge.sh"
 else
     echo "Shipping staging"
     npm run build

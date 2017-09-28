@@ -23,7 +23,7 @@ npm start
 ## Deploy
 
 ```bash
-./ship
+./ship [environment] # [production | staging] defaults to staging
 ```
 
 ## Resources
