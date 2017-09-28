@@ -6,6 +6,7 @@ import './styles/animations.css';
 import './styles/logo.css';
 import './styles/modal.css';
 import './styles/grid.css';
+import './styles/button.css';
 
 import './img/starmaster0.png';
 import './img/starmaster1.png';
@@ -22,7 +23,8 @@ let itemInitialDimensions = {};
 let itemRef = {};
 let prevState = {};
 const initialState = {
-  gridItems: [{
+  gridItems: [
+    {
       fullImage: 'img/starmaster1.png',
       isFullImageLoaded: false,
       modalTemplate: 'two',
@@ -76,8 +78,9 @@ const blurUp = state => {
 };
 
 const setState = state => {
-  const nextState = { ...prevState,
-    ...state
+  const nextState = {
+    ...prevState,
+    ...state,
   };
   const markup = renderApp(nextState);
   app.innerHTML = markup;
@@ -91,7 +94,7 @@ const assignEvents = () => {
   const items = document.querySelectorAll('.grid-item');
   items.forEach(item => item.addEventListener('click', () => modalOpen(item)));
   modalExitButton.addEventListener('click', modalClose);
-  modal.onscroll = function (ev) {
+  modal.onscroll = function(ev) {
     const activeGrideItem = document.querySelector('.grid-item.active');
     const newPosition =
       parseInt(activeGrideItem.style.top.replace('px', '')) -
@@ -101,7 +104,8 @@ const assignEvents = () => {
     // console.log(activeGrideItem.style.top);
     // console.log(newPosition);
     // activeGrideItem.style.top = newPosition;
-    if (modal.scrollTop < 400) {}
+    if (modal.scrollTop < 400) {
+    }
   };
 };
 
@@ -149,18 +153,9 @@ function modalOpen(item) {
   const modal = document.querySelector('.modal');
   const modalContent = document.querySelector('.modal-content');
   const modalBanner = document.querySelector('.modal-banner');
-  const {
-    innerHeight,
-    innerWidth
-  } = window;
-  const {
-    clientHeight,
-    clientWidth
-  } = item;
-  const {
-    top,
-    left
-  } = item.getBoundingClientRect();
+  const { innerHeight, innerWidth } = window;
+  const { clientHeight, clientWidth } = item;
+  const { top, left } = item.getBoundingClientRect();
   const dataLink = item.getAttribute('data-link');
   const dataArticle = item.getAttribute('data-article');
 
@@ -171,7 +166,7 @@ function modalOpen(item) {
   item.className += ' active';
   itemInitialDimensions = {
     clientHeight,
-    clientWidth
+    clientWidth,
   };
   itemRef = item;
   item.style.width = clientWidth + 'px';
@@ -190,10 +185,7 @@ function modalClose() {
   const modal = document.querySelector('.modal');
   const modalContent = document.querySelector('.modal-content');
   const modalBanner = document.querySelector('.modal-banner');
-  const {
-    clientHeight,
-    clientWidth
-  } = itemInitialDimensions;
+  const { clientHeight, clientWidth } = itemInitialDimensions;
   const iframe = document.querySelector('iframe');
   // iframe.src = '';
 
@@ -210,16 +202,16 @@ function modalClose() {
   }, 500);
 }
 
-(function () {
-  var throttle = function (type, name, obj) {
+(function() {
+  var throttle = function(type, name, obj) {
     obj = obj || window;
     var running = false;
-    var func = function () {
+    var func = function() {
       if (running) {
         return;
       }
       running = true;
-      requestAnimationFrame(function () {
+      requestAnimationFrame(function() {
         obj.dispatchEvent(new CustomEvent(name));
         running = false;
       });

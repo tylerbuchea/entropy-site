@@ -7,6 +7,8 @@ const articles = {
     <div class="modal-article">
       <strong>Hi there,</strong>
 
+      <button class="button button-green">Play Now!</button>
+
       <p>
         This was a project I worked on with another Portland agency
         for a high profile client. It was a racing game that involved

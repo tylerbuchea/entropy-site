@@ -1,0 +1,109 @@
+.button:after {
+  background: #fff;
+  outline: none;
+}
+
+.button-green,
+.button-green:before {
+  background: rgba(73, 155, 234, 1);
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(73, 155, 234, 1) 0%,
+    rgba(26, 188, 156, 1) 100%
+  );
+  background: -webkit-gradient(
+    left bottom,
+    right top,
+    color-stop(0%, rgba(73, 155, 234, 1)),
+    color-stop(100%, rgba(26, 188, 156, 1))
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(73, 155, 234, 1) 0%,
+    rgba(26, 188, 156, 1) 100%
+  );
+  background: -o-linear-gradient(
+    45deg,
+    rgba(73, 155, 234, 1) 0%,
+    rgba(26, 188, 156, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    45deg,
+    rgba(73, 155, 234, 1) 0%,
+    rgba(26, 188, 156, 1) 100%
+  );
+  background: linear-gradient(
+    45deg,
+    rgba(73, 155, 234, 1) 0%,
+    rgba(26, 188, 156, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr='#499bea',
+      endColorstr='#1abc9c',
+      GradientType=1
+    );
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  border-radius: 3px;
+  text-decoration: none;
+  padding: 0.5em;
+  margin: 0.5em;
+  font-size: 2em;
+  font-weight: bold;
+  transition: all 0.5s;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button:hover {
+  text-shadow: 0px 0px 0px rgba(255, 255, 255, 0.75);
+}
+
+.button:hover:after {
+  left: 100%;
+  top: 100%;
+  bottom: 100%;
+  right: 100%;
+}
+
+.button:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+
+.button:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  bottom: 2px;
+  right: 2px;
+  z-index: -1;
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+
+.rot-360-noscoop:hover {
+  filter: hue-rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.rot-135:hover {
+  filter: hue-rotate(135deg);
+}
+
+.rot-90:hover {
+  filter: hue-rotate(90deg);
+}
