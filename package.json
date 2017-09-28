@@ -5,9 +5,10 @@
   "main": "app.js",
   "scripts": {
     "clean": "rimraf build && mkdir build",
-    "copy-cname": "cp src/CNAME build",
-    "build": "npm run clean && webpack -p && npm run copy-cname",
-    "start": "npm run build && webpack-dev-server --content-base build/ --progress --colors",
+    "copy-stuff": "cp src/CNAME build && cp src/favicon.ico build",
+    "build": "npm run clean && webpack -p && npm run copy-stuff",
+    "start":
+      "npm run build && webpack-dev-server --content-base build/ --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
