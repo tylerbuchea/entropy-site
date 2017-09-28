@@ -1,2 +1,16 @@
-npm run build
-surge -p ./build -d tensor.team
+#!/bin/bash
+
+n=1
+environment=${!n}
+
+if [ "$environment" == "production" ] ; then
+    echo "Shipping $environment"
+    npm run build
+    surge -p ./build -d tensor.team
+    echo "Production shipped! http://tensor.team"
+else
+    echo "Shipping staging"
+    npm run build
+    surge -p ./build -d tensor.surge.sh
+    echo "Staging shipped! https://tensor.surge.sh"
+fi
