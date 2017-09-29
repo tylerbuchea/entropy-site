@@ -11,7 +11,7 @@
 }
 
 .contact-list li i {
-  color: green;
+  color: #39c283;
 }
 
 .contact-list li a {
@@ -22,26 +22,12 @@
 
 .contact-list li a:hover {
   color: black;
-  border-bottom: 2px solid green;
+  border-bottom: 2px solid #39c283;
 }
 
 .contact-list input[type='email'] {
-  padding: 10px;
+  padding: 15px 10px;
   width: 200px;
   outline: none;
-}
-
-.contact-list input[type='submit'] {
-  padding: 10px;
-  width: 200px;
-  border: none;
-  outline: none;
-  background: green;
-  color: white;
-  transition: background 0.3s ease-in-out;
-}
-
-.contact-list input[type='submit']:hover,
-.contact-list input[type='submit']:active {
-  background: lightgreen;
+  position: relative;
 }

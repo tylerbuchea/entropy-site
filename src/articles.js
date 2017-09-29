@@ -6,6 +6,8 @@ const articles = {
 
     <div class="modal-article">
 
+      <a class="button" target="_blank" href="https://dr5en.surge.sh">PLAY NOW!</a>
+
       <p>
         This was a project I worked on with another Portland agency
         for a high profile client. It is a racing game that involves
@@ -43,6 +45,9 @@ const articles = {
     </div>
 
     <div class="modal-article">
+
+      <a class="button" target="_blank" href="https://aws-0003-viz.firebaseapp.com">PLAY NOW!</a>
+
       <p>
         This was less of a game and more of an experimental experience.
         This project was also for trainging purposes, but instead of presenting
@@ -71,6 +76,9 @@ const articles = {
     </div>
 
     <div class="modal-article">
+
+      <a class="button" target="_blank" href="https://starmaster.surge.sh">PLAY NOW!</a>
+
       <p>
         This is a proof of concept turned into a fully realized game. Tensor took
         everything we learned from passed projects about making mobile games performant, playable,
@@ -109,7 +117,7 @@ const articles = {
         <li>
           <form action="//formspree.io/tyler@buchea.com" method="post">
             <input name="_replyto" placeholder="your-email@example.com" style="font-size: 12.5px;" type="email" />
-            <input type="submit" value="SEND" />
+            <input class="button" type="submit" value="SEND" />
           </form>
         </li>
       </ul>

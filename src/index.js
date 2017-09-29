@@ -7,6 +7,7 @@ import './styles/logo.css';
 import './styles/modal.css';
 import './styles/grid.css';
 import './styles/contact-list.css';
+import './styles/button.css';
 
 import './img/starmaster0.png';
 import './img/starmaster1.png';

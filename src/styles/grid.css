@@ -262,6 +262,22 @@
   /* background-position: center calc(50% + 30px); */
   background-position: center center;
 }
+
+.grid .grid-item--nav-prev {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.grid .grid-item--nav-prev.active {
+  -webkit-filter: none;
+  filter: none;
+}
+
+.grid .grid-item--nav-prev:hover {
+  -webkit-filter: none;
+  filter: none;
+}
+
 .grid .grid-item--nav-prev .grid__link {
   text-shadow: 0px 0px 10px #333;
 }
