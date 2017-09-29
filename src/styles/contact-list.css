@@ -1,0 +1,47 @@
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.contact-list li {
+  margin-bottom: 20px;
+}
+
+.contact-list li i {
+  color: green;
+}
+
+.contact-list li a {
+  margin-left: 10px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s ease-in-out;
+}
+
+.contact-list li a:hover {
+  color: black;
+  border-bottom: 2px solid green;
+}
+
+.contact-list input[type='email'] {
+  padding: 10px;
+  width: 200px;
+  outline: none;
+}
+
+.contact-list input[type='submit'] {
+  padding: 10px;
+  width: 200px;
+  border: none;
+  outline: none;
+  background: green;
+  color: white;
+  transition: background 0.3s ease-in-out;
+}
+
+.contact-list input[type='submit']:hover,
+.contact-list input[type='submit']:active {
+  background: lightgreen;
+}

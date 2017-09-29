@@ -5,17 +5,15 @@ const articles = {
     </div>
 
     <div class="modal-article">
-      <strong>Hi there,</strong>
 
       <p>
         This was a project I worked on with another Portland agency
-        for a high profile client. It was a racing game that involved
+        for a high profile client. It is a racing game that involves
         drones and was used as part of a training program for partnered
         businesses to learn more about the client and their offerings.
       </p>
 
       <!-- <iframe src="https://starmaster.surge.sh" /> -->
-
       <img src="http://lorempixel.com/400/200?fuck=off" />
 
       <p>
@@ -54,6 +52,7 @@ const articles = {
       </p>
 
       <img src="http://lorempixel.com/400/200?fuck=off" />
+
       <p>
         This project was initially setup to run on a very specific
         resolution large touch screen. This was ideal since the deployment
@@ -115,7 +114,7 @@ const articles = {
         </li>
       </ul>
       
-      <img src="img/crew.gif" />
+      <!-- <img src="img/crew.gif" /> -->
 
     </div>
   `,
