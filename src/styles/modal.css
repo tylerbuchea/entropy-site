@@ -1,82 +1,87 @@
 .modal {
-	background: transparent;
-	position: fixed;
-	top: 100vh;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	transition: top 0.5s ease-in-out;
-	overflow-y: scroll;
+  background: transparent;
+  position: fixed;
+  top: 100vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: top 0.5s ease-in-out;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
 
 .modal.active {
-	top: 0;
-	z-index: 4;
+  top: 0;
+  z-index: 4;
 }
 
 .modal .modal-exit-button {
-	position: fixed;
-	cursor: pointer;
-	top: 10px;
-	right: 10px;
-	z-index: 4;
-	opacity: 0;
+  position: fixed;
+  cursor: pointer;
+  top: 10px;
+  right: 10px;
+  z-index: 4;
+  opacity: 0;
 }
 
 .modal .modal-exit-button svg {
-	height: 30px;
-	width: 30px;
+  height: 30px;
+  width: 30px;
 }
 
 .modal.active .modal-exit-button {
-	opacity: 1;
-	transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
   transition-delay: 0.5s;
 }
 
 .modal .modal-content {
-	min-height: 100%;
+  min-height: 100%;
 }
 
 .modal .modal-content .modal-banner {
-	background: transparent;
-	width: 100%;
-	height: 400px;
-	background: transparent;
-	position: relative;
+  background: transparent;
+  width: 100%;
+  height: 400px;
+  background: transparent;
+  position: relative;
 }
 
 .modal .modal-content .modal-banner .banner-title {
-	color: #fff;
-	font-size: 2rem;
-	text-transform: uppercase;
-	position: absolute;
-	bottom: 20px;
-	left: 20px;
-	z-index: 3;
-	left: 20px;
+  color: #fff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 3;
+  left: 20px;
 }
 
 .modal.active .modal-content .modal-banner .banner-title {
-	left: 20px;
+  left: 20px;
 }
 
 .modal .modal-content .modal-article {
-	background: #fff;
-	padding: 20px 20px;
-	min-height: calc(100vh - 400px);
+  background: #fff;
+  padding: 20px 20px;
+  min-height: calc(100vh - 400px);
+}
+
+.modal .modal-content .modal-article .container {
+  max-width: 800px;
+  margin: auto;
 }
 
 .modal .modal-content .modal-article img {
-	width: 100%;
-	max-width: 400px;
-	height: 200px;
-	background-color: #ddd;
+  width: 100%;
+  max-width: 400px;
+  height: 200px;
+  background-color: #ddd;
 }
 
 .modal .modal-content .modal-article iframe {
-	max-width: 1150px;
+  max-width: 1150px;
   width: 100%;
   min-height: 650px;
   border: 0;
