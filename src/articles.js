@@ -27,7 +27,7 @@ const articles = {
           would allow good performance on mobile browsers. The initial
           version of this game experience didn't have mobile support
           we have since created a new mobile friendly build and uploaded
-          for you here:
+          for you.
         </p>
 
         <p>
@@ -57,7 +57,7 @@ const articles = {
 
         <p>
           This was less of a game and more of an experimental experience.
-          This project was also for trainging purposes, but instead of presenting
+          This project was also for training purposes, but instead of presenting
           business partners with a boring list we distributed the contents of data
           in 3D space and allowed the viewers to pan around and explore the content
           via floating geometries we dubbed "geods".
@@ -70,7 +70,7 @@ const articles = {
           resolution large touch screen. This was ideal since the deployment
           was contained to physical events and we had access to the devices it ran on.
           We have since uploaded a new version that is better suited to be tested
-          on all devices (including mobile). You can check that out here:
+          on all devices (including mobile).
         </p>
 
         <img src="http://lorempixel.com/400/200" />

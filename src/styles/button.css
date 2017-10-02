@@ -16,3 +16,7 @@
   background: #000;
   color: white;
 }
+
+.button:focus {
+  color: white;
+}
